@@ -1,0 +1,181 @@
+:root {
+	--primary-color: #84bd00;
+	--primary-color-2: #54585a;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+body {
+	color: var(--primary-color-2);
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	text-align: center;
+}
+
+section {
+	height: 100vh;
+	padding: 5rem 2rem 0;
+	h2 {
+		font-family: 'Crete Round', sans-serif;
+		font-size: 3rem;
+		margin-top: 0;
+	}
+}
+
+.logo {
+	background-color: rgba(255, 255, 255, .8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 20rem;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+h1 {
+	font-family: 'Crete Round', sans-serif;
+}
+
+.intro {
+	h1 {
+		color: var(--primary-color);
+		font-size: 5rem;
+		margin-top: 6rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.author {
+	float: left;
+	font-size: 1.3rem;
+	margin-top: 10rem;
+	margin-left: 10%;
+	h3 {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+	h4 {
+		font-weight: normal;
+		margin-top: 0;
+	}
+}
+
+.flow {
+	.container {
+		height: calc(100vh - 8rem);
+		overflow-y: scroll;
+	}
+
+}
+
+code {
+	background-color: rgba(239, 239, 239, .7); /* #efefef */
+	font-family: 'Source Code Pro', monospace;
+	padding: 0 .5rem;
+	word-break: break-all;
+}
+.step {
+	font-size: 2rem;
+	i {
+		margin-left: 1rem;
+	}
+	.support {
+		font-size: .7em;
+	}
+	&.step-left {
+		float: left;
+		width: 45%;
+	}
+	&.step-right {
+		float: right;
+		width: 45%;
+	}
+	&.step-sm {
+		font-size: 1.6rem;
+	}
+}
+
+.link {
+	margin: 2rem 0;
+	i {
+		font-size: 2rem;
+	}
+	&.link-left {
+		display: inline-block;
+		transform: translateX(-3rem) rotate(45deg);
+	}
+	&.link-right {
+		display: inline-block;
+		transform: translateX(3rem) rotate(-45deg);
+	}
+}
+
+.product-page {
+	@extend %clearfix;
+	margin: 0 auto;
+	width: 70%;
+	code {
+		font-size: 2rem;
+	}
+	.area {
+		padding-top: 3rem;
+		transition: transform .2s ease-in;
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+	.product-image {
+		background-color: #b3e5fc;
+		float: left;
+		width: 43%;
+		height: 20rem;
+		margin-bottom: 1rem;
+		&:hover {
+			background-color: #4fc3f7;
+		}
+	}
+	.product-detail {
+		background-color: #b2dfdb;
+		float: right;
+		width: 53%;
+		height: 20rem;
+		&:hover {
+			background-color: #4db6ac;
+		}
+	}
+	.product-info {
+		background-color: #f0f4c3;
+		clear: left;
+		height: 10rem;
+		&:hover {
+			background-color: #dce775;
+		}
+	}
+}
+
+.events {
+	ul,
+	h3 {
+		text-align: left;
+	}
+}
