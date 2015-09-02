@@ -1,0 +1,17 @@
+{
+  "name": "sg-pdp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "postcss -w -u postcss-nested -u autoprefixer -u cssnext -o main.css css/main.css"
+  },
+  "author": "Tri Nguyen",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "cssnext": "^1.8.4",
+    "postcss-cli": "^2.0.0",
+    "postcss-nested": "^1.0.0"
+  }
+}
