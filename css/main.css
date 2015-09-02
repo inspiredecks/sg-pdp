@@ -178,4 +178,14 @@ code {
 	h3 {
 		text-align: left;
 	}
+	li {
+		margin-bottom: .5rem;
+	}
+	ul ul {
+		margin-top: .5rem;
+	}
+	.emphasis {
+		font-weight: bold;
+		text-decoration: underline;
+	}
 }
