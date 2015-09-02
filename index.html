@@ -17,6 +17,7 @@
 	<title>Product Details Page - Components Overview - SiteGenesis</title>
 	<link rel="stylesheet" href="main.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/prism.css"/>
 </head>
 <body>
 <div class="logo">
@@ -48,7 +49,28 @@
 			<i class="fa fa-long-arrow-down"></i>
 		</div>
 		<div class="step">
-			<code>product/product.isml</code><i class="fa fa-file-text"></i>
+			<a href="#" class="modal-trigger" data-modal="#product-isml"><code>product/product.isml</code></a><i class="fa fa-file-text"></i>
+			<div id="product-isml" class="modal sample">
+				<div class="modal-content">
+					<i class="fa fa-times close"></i>
+					<pre><code class="language-javascript">
+&lt;isscript&gt;
+	importScript('product/GetProductDetailUrl.ds');
+	var productDetailUrl = GetProductDetailUrl(pdict);
+	var source = pdict.CurrentHttpParameterMap.source.stringValue;
+	var format = pdict.CurrentHttpParameterMap.format.stringValue;
+	var DecoratorTemplate = 'product/pt_productdetails';
+	if (format == 'ajax' || source == 'search' || source == 'quickview' || source == 'giftregistry' || source == 'wishlist') {
+		DecoratorTemplate = 'util/pt_empty';
+	}
+&lt;/isscript&gt;
+
+&lt;isdecorate template="${DecoratorTemplate}"&gt;
+	&lt;isinclude url="${productDetailUrl}"/&gt;
+&lt;/isdecorate&gt;
+					</code></pre>
+				</div>
+			</div>
 		</div>
 		<div class="link">
 			<i class="fa fa-long-arrow-down"></i>
@@ -140,4 +162,25 @@
 	<h2>Thank you!</h2>
 	<h3>Questions?</h3>
 </section>
+<script src="vendor/prism.js"></script>
+<script>
+	var modalTriggers = document.querySelectorAll('.modal-trigger');
+	Object.keys(modalTriggers).forEach(function (key) {
+		var el = modalTriggers[key];
+		el.addEventListener('click', function (e) {
+			e.preventDefault();
+			var modalTarget = el.dataset.modal;
+			document.querySelector(modalTarget).classList.add('active');
+			document.body.classList.add('modal-active');
+		});
+	});
+	var modalCloses = document.querySelectorAll('.modal .close');
+	Object.keys(modalCloses).forEach(function (key) {
+		var el = modalCloses[key];
+		el.addEventListener('click', function () {
+			el.parentNode.parentNode.classList.remove('active');
+			document.body.classList.remove('modal-active');
+		});
+	});
+</script>
 </body>
