@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "postcss -w -u postcss-nested -u autoprefixer -u cssnext -o main.css css/main.css"
+    "start": "postcss -w -u postcss-nested -u autoprefixer -u cssnext -u postcss-extend -o main.css css/main.css"
   },
   "author": "Tri Nguyen",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "autoprefixer": "^5.2.0",
     "cssnext": "^1.8.4",
     "postcss-cli": "^2.0.0",
+    "postcss-extend": "^0.4.3",
     "postcss-nested": "^1.0.0"
   }
 }
